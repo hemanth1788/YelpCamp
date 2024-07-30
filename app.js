@@ -23,13 +23,13 @@ const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const MongoStore = require("connect-mongo");
-const dbUrl =  'mongodb://localhost:27017/yelp-camp';
+const dbUrl = process.env.DB_URL ;
 
 mongoose.connect(dbUrl, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
+    useCreateIndex: true, 
+    useFindAndModify: false, 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true 
 });
 
 const db = mongoose.connection;
